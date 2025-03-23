@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useSidebarStore, usePopoverStore } from "@/lib/stores/sidebarStore";
-import Backdrop from "../ui/Backfrop";
+import Backdrop from "../ui/Backdrop";
 
 
 
