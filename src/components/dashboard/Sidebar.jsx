@@ -14,7 +14,7 @@ const Sidebar = () => {
     <>
       {/* Profile Sidebar */}
       <div className={`sidebar-wrapper w-full col-span-3 ${isSidebarOpen ? 'active' : ''}`}>
-        <button className="crossbtn mb-4 lg:hidden" onClick={() => {
+        <button className="crossbtn mb-4 md:hidden" onClick={() => {
           closeSidebar()
           closePopover();
         }}>
@@ -23,7 +23,7 @@ const Sidebar = () => {
             <line x1="20" y1="4" x2="4" y2="20" />
           </svg>
         </button>
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <ProfileWrapper />
         </div>
 

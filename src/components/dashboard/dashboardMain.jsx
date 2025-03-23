@@ -24,7 +24,7 @@ const DashboardMain = () => {
 
           <div className="dashboard-desc py-6">
             <h1 className="text-2xl mb-1">Find your Dream Job, <span className="text-primary">Albert!</span></h1>
-            <p className="dasboard-txt mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
+            <p className="dasboard-txt md:mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
           </div>
 
 

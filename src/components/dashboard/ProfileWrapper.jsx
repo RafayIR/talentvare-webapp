@@ -21,7 +21,7 @@ const ProfileWrapper = ({ dashboard }) => {
               <Image src="/assets/images/sidebar/profile.png" alt="Profile" width={90} height={90} className="w-full h-full object-cover" />
             </div>
           </div>
-          <div className="profile-icon absolute right-2 top-35" onClick={togglePopover}>
+          <div className="profile-icon absolute right-2 top-35  block md:hidden" onClick={togglePopover}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="5" r="2" />
               <circle cx="12" cy="12" r="2" />
@@ -30,8 +30,8 @@ const ProfileWrapper = ({ dashboard }) => {
           </div>
           {/* Popover Menu */}
           {isPopoverOpen && (
-            <div className="absolute right-6 top-36 bg-white shadow-lg rounded-md p-1 w-40 z-0">
-              <button className="block w-full text-left px-4 py-2 hover:bg-gray-100" onClick={toggleSidebar}>View Insights</button>
+            <div className="absolute right-6 top-36 bg-white shadow-lg rounded-md p-1 w-30 z-0">
+              <button className="insight-txt block w-full text-left px-4 py-2 hover:bg-gray-100" onClick={toggleSidebar}>View Insights</button>
             </div>
           )}
         </div>

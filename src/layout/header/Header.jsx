@@ -78,8 +78,8 @@ const Header = () => {
             <div className="menu-toggle-btn lg:hidden flex items-center justify-end">
               <button className="bg-primary resume-builder-btn text-white py-2 rounded-md font-light md:block hidden" type="button">Resume Builder</button>
 
-              <button className="search-icon mr-2 md:hidden" onClick={() => { setIsActiveSearch(!isActiveSearch) }}>
-                <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button className="search-icon mr-3 md:hidden" onClick={() => { setIsActiveSearch(!isActiveSearch) }}>
+                <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.4999 17.024L13.9065 14.4306" stroke="#737A91" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" />
                   <path d="M13.0976 7.57274C13.0928 8.99051 12.5901 10.3615 11.6773 11.4464C10.7645 12.5313 9.49967 13.261 8.10361 
                       13.5083C6.70756 13.7555 5.26902 13.5045 4.03919 12.7991C2.80936 12.0936 1.86641 10.9786 1.37498 9.64874C0.883559 
@@ -89,7 +89,7 @@ const Header = () => {
                 </svg>
               </button>
 
-              <button className="w-6 h-6 rounded-full overflow-hidden md:block lg:hidden mr-2">
+              <button className="w-7 h-7 rounded-full overflow-hidden md:block lg:hidden mr-3">
                 <Image src="/assets/images/user/user-img.png" width={38} height={38} alt="User Image" />
               </button>
 
