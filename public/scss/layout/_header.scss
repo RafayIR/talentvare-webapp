@@ -1,9 +1,146 @@
 .header {
 
   .navbar {
+    display: flex;
 
     a {
       font-size: 16px;
+    }
+  }
+
+  .search-wrapper {
+    .input-wrapper {
+      input {
+        width: 250px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .resume-builder-btn {
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width : 1260px) {
+  .header {
+    .navbar {
+      a {
+        font-size: 14px;
+      }
+    }
+
+    .search-wrapper {
+      .input-wrapper {
+        input {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .resume-builder-btn {
+      font-size: 14px;
+      width: 120;
+    }
+
+    .find-job {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width : 1024px) {
+  .header {
+    .navbar-wrapper {
+      position: fixed;
+      right: 0;
+      top: 0;
+      background: #fff;
+      z-index: 2;
+      height: 100%;
+      width: 250px;
+      transition: all .3s ease;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 50px 20px 20px;
+      padding-inline: 20px;
+      transform: translateX(100%);
+
+      &.active {
+        width: 250px;
+        transition: all .3s ease;
+        transform: translateX(0);
+      }
+
+      .navbar {
+        flex-direction: column;
+        
+        a {
+          padding: 10px 0;
+          border-bottom: 1px solid #e9ecef;
+        }
+      }
+
+      .crossbtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    .resume-builder-btn {
+      margin-right: 10px;
+      font-size: 12px;
+      padding: 8px 8px;
+    }
+  }
+}
+
+@media screen and (max-width : 768px) {
+
+  .header {
+
+    .search-wrapper {
+      position: absolute;
+      border: 1px solid #e9ecef;
+      background: #fff;
+      top: 135%;
+      left: 2%;
+      width: 96%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(20px);
+      visibility: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+      .input-wrapper {
+        width: 100%;
+
+      }
+    }
+
+    .resume-builder-btn {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
   }
 }

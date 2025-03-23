@@ -86,7 +86,7 @@ const DashboardMain = () => {
                   <div className="px-4 py-2">
                     <span className="promoted-title">Promoted</span>
                     <div className="flex items-start justify-between mt-2">
-                      <div className="flex items-start space-x-3">
+                      <div className="flex items-start space-x-2">
                         <div className="w-12 h-12 flex items-center justify-center">
                           <Image src='/assets/icons/teams-icon.svg' alt="Teams" width={40} height={40} />
                         </div>
@@ -156,7 +156,7 @@ const DashboardMain = () => {
                   <div className="px-4 py-2">
                     <span className="promoted-title">Promoted</span>
                     <div className="flex items-start justify-between mt-2">
-                      <div className="flex items-start space-x-3">
+                      <div className="flex items-start space-x-2">
                         <div className="w-12 h-12 flex items-center justify-center">
                           <Image src='/assets/icons/teams-icon.svg' alt="Teams" width={40} height={40} />
                         </div>
@@ -226,7 +226,7 @@ const DashboardMain = () => {
                   <div className="px-4 py-2">
                     <span className="promoted-title">Promoted</span>
                     <div className="flex items-start justify-between mt-2">
-                      <div className="flex items-start space-x-3">
+                      <div className="flex items-start space-x-2">
                         <div className="w-12 h-12 flex items-center justify-center">
                           <Image src='/assets/icons/teams-icon.svg' alt="Teams" width={40} height={40} />
                         </div>
