@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ProfileWrapper from "./ProfileWrapper";
 
 const DashboardMain = () => {
   const [bookmarked, setBookmarked] = useState({});
@@ -17,11 +18,19 @@ const DashboardMain = () => {
     <>
       <div className="md:col-span-9 col-span-12">
         <div className="dashboard-wrapper">
-          <h1 className="text-2xl mb-1">Find your Dream Job, <span className="text-primary">Albert!</span></h1>
-          <p className="dasboard-txt mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
+          <div className="md:hidden">
+            <ProfileWrapper dashboard />
+          </div>
+
+          <div className="dashboard-desc py-6">
+            <h1 className="text-2xl mb-1">Find your Dream Job, <span className="text-primary">Albert!</span></h1>
+            <p className="dasboard-txt mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
+          </div>
+
+
 
           <div className="bg-white rounded-md px-5 py-5 flex lg:flex-row flex-wrap gap-4 mb-6">
-            
+
 
             <div className="input-wrapper w-full lg:flex-1">
               <input className="border-none px-4 py-2 font-light" type="text"

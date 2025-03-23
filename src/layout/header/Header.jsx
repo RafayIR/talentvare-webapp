@@ -3,17 +3,18 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Link from "next/link";
-import useSidebarStore from "@/lib/stores/sidebarStore";
+import { usePopoverStore, useSidebarStore } from "@/lib/stores/sidebarStore";
+import Backdrop from "@/components/ui/Backfrop";
 
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false)
   const [isActiveSearch, setIsActiveSearch] = useState(false)
-  const openSidebar = useSidebarStore((state) => state.openSidebar);
+  const { closePopover } = usePopoverStore()
   const { isSidebarOpen, closeSidebar } = useSidebarStore();
 
   useEffect(() => {
-    if (isOpen) {
+    if (isNavOpen) {
       document.body.classList.add('no-scroll');
     } else {
       document.body.classList.remove('no-scroll');
@@ -23,7 +24,7 @@ const Header = () => {
     return () => {
       document.body.classList.remove('no-scroll');
     };
-  }, [isOpen]);
+  }, [isNavOpen]);
 
   return (
 
@@ -37,8 +38,8 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className={`navbar-wrapper ${isOpen ? 'active' : ''}`}>
-              <button className="crossbtn lg:hidden" onClick={() => { setIsOpen(false) }} >
+            <div className={`navbar-wrapper ${isNavOpen ? 'active' : ''}`}>
+              <button className="crossbtn lg:hidden" onClick={() => { setIsNavOpen(false) }} >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="4" y1="4" x2="20" y2="20" />
                   <line x1="20" y1="4" x2="4" y2="20" />
@@ -88,13 +89,13 @@ const Header = () => {
                 </svg>
               </button>
 
-              <button onClick={openSidebar} className="w-6 h-6 rounded-full overflow-hidden md:block lg:hidden mr-2">
+              <button className="w-6 h-6 rounded-full overflow-hidden md:block lg:hidden mr-2">
                 <Image src="/assets/images/user/user-img.png" width={38} height={38} alt="User Image" />
               </button>
 
 
 
-              <button className="pointer" onClick={() => { setIsOpen(!isOpen) }}>
+              <button className="pointer" onClick={() => { setIsNavOpen(!isNavOpen) }}>
                 <svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <line x1="3" y1="12" x2="21" y2="12" />
@@ -106,17 +107,13 @@ const Header = () => {
         </div>
 
 
-        {/* Backdrop */}
-        {(isOpen || isActiveSearch || isSidebarOpen) && (
-          <div
-            className="backdrop fixed inset-0 bg-black/50 z-[1]"
-            onClick={() => {
-              setIsOpen(false);
-              setIsActiveSearch(false);
-              closeSidebar()
-            }}
-          ></div>
-        )}
+        <Backdrop
+          isVisible={isNavOpen || isActiveSearch}
+          onClose={() => {
+            setIsNavOpen(false);
+            setIsActiveSearch(false);
+          }}
+        />
       </header>
     </>
   )

@@ -1,39 +1,30 @@
 'use client'
 import { useState } from "react";
-import useSidebarStore from "@/lib/stores/sidebarStore";
-import Image from "next/image"
+import { useSidebarStore, usePopoverStore } from "@/lib/stores/sidebarStore";
+import Image from "next/image";
+import ProfileWrapper from "./ProfileWrapper";
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isSidebarOpen, closeSidebar } = useSidebarStore();
+  const { closePopover } = usePopoverStore();
 
   return (
     <>
       {/* Profile Sidebar */}
       <div className={`sidebar-wrapper w-full col-span-3 ${isSidebarOpen ? 'active' : ''}`}>
-        <button className="crossbtn mb-4 lg:hidden" onClick={closeSidebar} >
+        <button className="crossbtn mb-4 lg:hidden" onClick={() => {
+          closeSidebar()
+          closePopover();
+        }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="4" y1="4" x2="20" y2="20" />
             <line x1="20" y1="4" x2="4" y2="20" />
           </svg>
         </button>
-        <div className="profile-wrapper rounded-lg overflow-hidden bg-white mb-3">
-          <div className="relative">
-            <div className="h-32 bg-gray-300">
-              <Image src="/assets/images/sidebar/cover.png" alt="Cover" width={346} height={100} className="w-full h-full object-cover" />
-            </div>
-            <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
-              <div className="w-22 h-22 rounded-full border-3 border-white overflow-hidden">
-                <Image src="/assets/images/sidebar/profile.png" alt="Profile" width={90} height={90} className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-
-          <div className="profile-title pt-12 pb-4 text-center">
-            <h3>Albert Flores</h3>
-            <p>Senior Product Designer | UI/UX Designer | Graphic Designer | Web Designer</p>
-            <span className="text-xs mt-1">Clinton, Maryland</span>
-          </div>
+        <div className="hidden lg:block">
+          <ProfileWrapper />
         </div>
 
         <div className="stats-wrapper rounded-lg overflow-hidden bg-white mb-3 p-4">

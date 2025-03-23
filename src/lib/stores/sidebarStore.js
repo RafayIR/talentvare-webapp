@@ -1,10 +1,15 @@
 import { create } from "zustand";
 
-const useSidebarStore = create((set) => ({
+export const useSidebarStore = create((set) => ({
   isSidebarOpen: false,
   openSidebar: () => set({ isSidebarOpen: true }),
   closeSidebar: () => set({ isSidebarOpen: false }),
   toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
 }));
 
-export default useSidebarStore;
+
+export const usePopoverStore = create((set) => ({
+  isPopoverOpen: false,
+  togglePopover: () => set((state) => ({ isPopoverOpen: !state.isPopoverOpen })),
+  closePopover: () => set({ isPopoverOpen: false }),
+}));
