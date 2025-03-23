@@ -21,6 +21,8 @@ const DashboardMain = () => {
           <p className="dasboard-txt mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
 
           <div className="bg-white rounded-md px-5 py-5 flex lg:flex-row flex-wrap gap-4 mb-6">
+            
+
             <div className="input-wrapper w-full lg:flex-1">
               <input className="border-none px-4 py-2 font-light" type="text"
                 placeholder="Job Title, Company, or Keywords" />

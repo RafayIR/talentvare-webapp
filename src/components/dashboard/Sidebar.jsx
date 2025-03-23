@@ -1,14 +1,22 @@
 'use client'
 import { useState } from "react";
+import useSidebarStore from "@/lib/stores/sidebarStore";
 import Image from "next/image"
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSidebarOpen, closeSidebar } = useSidebarStore();
 
   return (
     <>
       {/* Profile Sidebar */}
-      <div className="sidebar-wrapper w-full col-span-3">
+      <div className={`sidebar-wrapper w-full col-span-3 ${isSidebarOpen ? 'active' : ''}`}>
+        <button className="crossbtn mb-4 lg:hidden" onClick={closeSidebar} >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="4" y1="4" x2="20" y2="20" />
+            <line x1="20" y1="4" x2="4" y2="20" />
+          </svg>
+        </button>
         <div className="profile-wrapper rounded-lg overflow-hidden bg-white mb-3">
           <div className="relative">
             <div className="h-32 bg-gray-300">

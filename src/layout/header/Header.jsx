@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Link from "next/link";
+import useSidebarStore from "@/lib/stores/sidebarStore";
 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isActiveSearch, setIsActiveSearch] = useState(false)
+  const openSidebar = useSidebarStore((state) => state.openSidebar);
+  const { isSidebarOpen, closeSidebar } = useSidebarStore();
 
   useEffect(() => {
     if (isOpen) {
@@ -85,9 +88,9 @@ const Header = () => {
                 </svg>
               </button>
 
-              <div className="w-6 h-6 rounded-full overflow-hidden md:block lg:hidden mr-2">
+              <button onClick={openSidebar} className="w-6 h-6 rounded-full overflow-hidden md:block lg:hidden mr-2">
                 <Image src="/assets/images/user/user-img.png" width={38} height={38} alt="User Image" />
-              </div>
+              </button>
 
 
 
@@ -102,14 +105,15 @@ const Header = () => {
           </div>
         </div>
 
-  
+
         {/* Backdrop */}
-        {(isOpen || isActiveSearch) && (
+        {(isOpen || isActiveSearch || isSidebarOpen) && (
           <div
             className="backdrop fixed inset-0 bg-black/50 z-[1]"
             onClick={() => {
               setIsOpen(false);
               setIsActiveSearch(false);
+              closeSidebar()
             }}
           ></div>
         )}
