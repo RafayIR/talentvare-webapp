@@ -1,5 +1,4 @@
 .sidebar-wrapper {
-
   .profile-wrapper {
     .profile-title {
       width: 70%;
@@ -43,7 +42,6 @@
     }
   }
 
-
   .upcoming-events-wrapper {
     .title {
       font-weight: 600;
@@ -77,6 +75,32 @@
         color: #585D6E;
         cursor: pointer;
       }
+    }
+  }
+}
+
+@media screen and (max-width : 768px) {
+
+  .sidebar-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    height: 100%;
+    width: 300px;
+    transition: all .3s ease;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 20px 20px;
+    // padding-inline: 20px;
+    transform: translateX(-100%);
+
+    &.active {
+      width: 250px;
+      transition: all .3s ease;
+      transform: translateX(0);
     }
   }
 }

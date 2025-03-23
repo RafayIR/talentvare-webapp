@@ -33,9 +33,17 @@
   .select-wrapper {
     border-left: 1px solid #E9ECEF;
 
+    input {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
     select {
       color: #585D6E;
-      padding-left: 25px;
+      padding-left: 20px;
+      font-weight: 400;
+      font-size: 14px;
+
 
       &:focus {
         outline: none;
@@ -121,4 +129,40 @@
 .jobs-wrapper {
   height: 70dvh;
   overflow-y: auto;
+}
+
+
+
+@media screen and (max-width : 1024px) {
+  .dashboard-wrapper {
+    .select-wrapper {
+      border-left: none;
+      width: 48.5%;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+
+@media screen and (max-width :768px) {
+
+  .dashboard-wrapper {
+
+    .input-wrapper {
+      input {
+        border-color: #ccc;
+      }
+    }
+
+    .select-wrapper {
+      width: 100%;
+    }
+
+    .btn-wrapper {
+      width: 100%;
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
