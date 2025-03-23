@@ -24,7 +24,7 @@ export const JobList = ({ jobs, title, bookmarked, toggleBookmark }) => (
                 </div>
               </div>
             </div>
-            <div className="mt-2 space-y-2 job-location">
+            <div className="job-location">
               <div className="flex items-center">
                 <span>{job.location}</span>
               </div>
@@ -33,12 +33,12 @@ export const JobList = ({ jobs, title, bookmarked, toggleBookmark }) => (
               </div>
             </div>
             <div className="flex items-center justify-between mt-4 apply-btn-wrapper">
-              <button className="md:w-[80%] w-[90%] apply-btn bg-primary text-white py-2 rounded-md">
+              <button className="md:w-[80%] w-[90%] apply-btn bg-primary text-white py-2 rounded-md cursor-pointer">
                 Apply Now
               </button>
               <button
                 onClick={() => toggleBookmark(`${job.id}`)}
-                className="text-gray-400 hover:text-primary"
+                className="text-gray-400 hover:text-primary cursor-pointer"
               >
                 {bookmarked[`${job.id}`] ? (
                   <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">

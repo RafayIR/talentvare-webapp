@@ -22,7 +22,7 @@ const DashboardMain = () => {
             <ProfileWrapper dashboard />
           </div>
 
-          <div className="dashboard-desc py-6">
+          <div className="dashboard-desc md:py-4 py-6">
             <h1 className="text-2xl mb-1">Find your Dream Job, <span className="text-primary">Albert!</span></h1>
             <p className="dasboard-txt md:mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
           </div>
@@ -40,7 +40,7 @@ const DashboardMain = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
-            <div className="select-wrapper relative w-full lg:w-42">
+            <div className="select-wrapper relative w-full lg:w-34">
               <select className="w-full appearance-none px-4 py-2 bg-white font-light">
                 <option>Job Type</option>
               </select>
@@ -49,7 +49,7 @@ const DashboardMain = () => {
               </svg>
             </div>
             <div className="btn-wrapper">
-              <button className="bg-primary text-white font-light px-8 py-2 rounded-lg flex items-center justify-center text-[14px]">
+              <button className="bg-primary cursor-pointer text-white font-light px-8 py-2 rounded-lg flex items-center justify-center text-[14px]">
                 <svg className="mr-2" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.25 17L13.6566 14.4066" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" />
                   <path d="M12.8477 7.5487C12.8428 8.96647 12.3401 10.3375 11.4274 11.4224C10.5146 12.5072

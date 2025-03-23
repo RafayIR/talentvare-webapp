@@ -68,7 +68,7 @@ const Sidebar = () => {
                   <button className="bg-green-200 text-green-800 px-2 py-1 rounded-lg">
                     Accepted
                   </button>
-                  <button className="ml-2 hover:bg-red-400 hover:text-[#fff] rounded-lg px-1 py-1">
+                  <button className="ml-2 deny hover:bg-red-400 hover:text-[#fff] rounded-lg px-1 py-1">
                     Deny
                   </button>
                 </div>

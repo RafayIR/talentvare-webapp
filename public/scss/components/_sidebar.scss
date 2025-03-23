@@ -71,9 +71,16 @@
 
       button {
         font-size: 10px;
+        font-weight: 400;
         transition: 0.3s ease all;
         color: #585D6E;
         cursor: pointer;
+
+        &.deny {
+          &:hover {
+            color: #fff;
+          }
+        }
       }
     }
   }

@@ -5,6 +5,8 @@
 
     a {
       font-size: 16px;
+      font-weight: 400;
+      color: #737A91;
     }
   }
 
@@ -12,6 +14,9 @@
     .input-wrapper {
       input {
         width: 250px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #737A91;
 
         &:focus {
           outline: none;
@@ -83,7 +88,7 @@
 
       .navbar {
         flex-direction: column;
-        
+
         a {
           padding: 10px 0;
           border-bottom: 1px solid #e9ecef;
@@ -130,6 +135,7 @@
         transform: translateY(0);
         visibility: visible;
       }
+
       .input-wrapper {
         width: 100%;
 
