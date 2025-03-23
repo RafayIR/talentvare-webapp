@@ -1,6 +1,6 @@
 
 import { NeueHasMedium } from "./font";
-import "./globals.scss";
+import "./globals.scss"; 
 
 
 export const metadata = {

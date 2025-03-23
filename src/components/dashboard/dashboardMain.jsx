@@ -22,14 +22,14 @@ const DashboardMain = () => {
             <ProfileWrapper dashboard />
           </div>
 
-          <div className="dashboard-desc md:py-4 py-6">
+          <div className="dashboard-desc md:pt-4 md:py-0 py-6">
             <h1 className="text-2xl mb-1">Find your Dream Job, <span className="text-primary">Albert!</span></h1>
             <p className="dasboard-txt md:mb-6">Explore the latest job openings and apply for the best opportunities available today!</p>
           </div>
 
           <div className="bg-white rounded-md px-5 py-5 flex lg:flex-row flex-wrap gap-4 mb-6">
             <div className="input-wrapper w-full lg:flex-1">
-              <input className="border-none px-4 py-2 font-light" type="text"
+              <input className="border-none px-0 py-2 font-light" type="text"
                 placeholder="Job Title, Company, or Keywords" />
             </div>
             <div className="select-wrapper relative w-full lg:w-42">

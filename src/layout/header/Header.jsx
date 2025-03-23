@@ -88,7 +88,6 @@ const Header = () => {
         </div>
       </div>
 
-
       <Backdrop
         isVisible={isNavOpen || isActiveSearch}
         onClose={() => {
